@@ -20,13 +20,3 @@ spec:
           envFrom:
             - secretRef:
                 name: discord-bot-token
-          securityContext:
-            capabilities:
-              drop:
-                - CAP_MKNOD
-                - CAP_NET_RAW
-                - CAP_AUDIT_WRITE
-          resources:
-            requests:
-              memory: "130Mi"
-              cpu: "15m"
