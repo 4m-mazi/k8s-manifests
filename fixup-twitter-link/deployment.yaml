@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fixup-twitter-link-deployment
+  labels:
+    app: fixup-twitter-link
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: fixup-twitter-link
+  template:
+    metadata:
+      labels:
+        app: fixup-twitter-link
+    spec:
+      containers:
+        - name: fixup-twitter-link
+          image: ghcr.io/4m-mazi/fixup-twitter-link:sha-d63dc74
+          envFrom:
+            - secretRef:
+                name: discord-bot-token
+          securityContext:
+            capabilities:
+              drop:
+                - CAP_MKNOD
+                - CAP_NET_RAW
+                - CAP_AUDIT_WRITE
+          resources:
+            requests:
+              memory: "130Mi"
+              cpu: "15m"
