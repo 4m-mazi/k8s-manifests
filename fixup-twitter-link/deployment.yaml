@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: fixup-twitter-link
-          image: ghcr.io/4m-mazi/fixup-twitter-link:main@sha256:bd123b95aaadb3e0ee689d2942ec5f54163cdd05baf6abfd9f4241731503e115
+          image: ghcr.io/4m-mazi/fixup-twitter-link:main@sha256:36d507de02490ae113c9147f9e0f03902a39f67ec4974bc8d221fdbc21687235
           envFrom:
             - secretRef:
                 name: discord-bot-token
