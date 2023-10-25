@@ -42,4 +42,4 @@ spec:
               value: "pleroma"
           envFrom:
             - secretRef:
-                name: postgress-db-password
+                name: db-password
