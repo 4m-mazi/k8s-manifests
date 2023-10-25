@@ -51,24 +51,6 @@ spec:
                 secretKeyRef:
                   name: db-password
                   key: DB_PASS
-          volumeMounts:
-            - name: uploads-volume
-              mountPath: /var/lib/pleroma/uploads
-            - name: static-volume
-              mountPath: /var/lib/pleroma/static
-            - name: config-volume
-              mountPath: /etc/pleroma/config.exs
-              readOnly: true
-      volumes:
-        - name: uploads-volume
-          persistentVolumeClaim:
-            claimName: uploads-pvc
-        - name: static-volume
-          persistentVolumeClaim:
-            claimName: static-pvc
-        - name: config-volume
-          persistentVolumeClaim:
-            claimName: config-pvc
 ---
 apiVersion: apps/v1
 kind: Deployment
