@@ -30,7 +30,7 @@ spec:
     spec:
       containers:
         - name: pleroma
-          image: ghcr.io/4m-mazi/docker-pleroma:main@sha256:7f67b08c518b82acf80c8741d31d90ff2091eb09c6fba593307d2cb362b942f1
+          image: ghcr.io/4m-mazi/docker-pleroma:main@sha256:e8f65dc239daddcbd56bd1516019b07786b8a40a1f67577f65d75b2b2d1ee6ef
           env:
             - name: DOMAIN
               value: "example.com"
