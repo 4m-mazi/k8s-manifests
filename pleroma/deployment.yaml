@@ -32,8 +32,8 @@ spec:
               value: "pleroma"
             - name: DB_PASSWORD
               valueFrom:
-                - secretRef:
-                    name: db-password
+                secretRef:
+                  name: db-password
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -61,5 +61,5 @@ spec:
               value: "pleroma"
             - name: POSTGRES_PASSWORD
               valueFrom:
-                - secretRef:
+                secretRef:
                   name: postgress-db-password
