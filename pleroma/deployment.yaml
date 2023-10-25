@@ -26,7 +26,7 @@ spec:
             - name: POSTGRES_DB
               value: "pleroma"
         - name: postgres
-          image: postgres:12.1-alpine
+          image: postgres:12.1-alpine@sha256:686fc517b2b979f972aa2cdbdb4e3392f28b7d6e6dc31054c05144863e6d9098
           env:
             - name: DOMAIN
               value: "example.com"
