@@ -34,7 +34,7 @@ spec:
               valueFrom:
                 secretKeyRef:
                   name: db-password
-                  key: DB_PASSWORD
+                  key: DB_PASS
 ---
 apiVersion: apps/v1
 kind: Deployment
