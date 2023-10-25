@@ -32,7 +32,7 @@ spec:
               value: "pleroma"
             - name: DB_HOST
               value: "postgres"
-            - name: DB_PASSWORD
+            - name: DB_PASS
               valueFrom:
                 secretKeyRef:
                   name: db-password
