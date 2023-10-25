@@ -51,6 +51,12 @@ spec:
                 secretKeyRef:
                   name: db-password
                   key: DB_PASS
+            - name: UID
+              value: "911"
+            - name: GID
+              value: "911"
+            - name: PLEROMA_VER
+              value: "develop"
 ---
 apiVersion: apps/v1
 kind: Deployment
