@@ -31,12 +31,30 @@ spec:
             - name: DB_NAME
               value: "pleroma"
             - name: DB_HOST
-              value: "postgres"
+              value: "pleroma-db"
             - name: DB_PASSWORD
               valueFrom:
                 secretKeyRef:
                   name: db-password
                   key: DB_PASS
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pleroma-db-deployment
+  labels:
+    app: pleroma-db
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pleroma-db
+  template:
+    metadata:
+      labels:
+        app: pleroma-db
+    spec:
+      containers:
         - name: postgres
           image: postgres:12.1-alpine
           ports:
@@ -51,35 +69,3 @@ spec:
                 secretKeyRef:
                   name: postgress-db-password
                   key: POSTGRES_PASSWORD
-# ---
-# apiVersion: apps/v1
-# kind: Deployment
-# metadata:
-#   name: pleroma-db-deployment
-#   labels:
-#     app: pleroma-db
-# spec:
-#   replicas: 1
-#   selector:
-#     matchLabels:
-#       app: pleroma-db
-#   template:
-#     metadata:
-#       labels:
-#         app: pleroma-db
-#     spec:
-#       containers:
-#         - name: postgres
-#           image: postgres:12.1-alpine
-#           ports:
-#             - containerPort: 5432
-#           env:
-#             - name: POSTGRES_USER
-#               value: "pleroma"
-#             - name: POSTGRES_DB
-#               value: "pleroma"
-#             - name: POSTGRES_PASSWORD
-#               valueFrom:
-#                 secretKeyRef:
-#                   name: postgress-db-password
-#                   key: POSTGRES_PASSWORD
