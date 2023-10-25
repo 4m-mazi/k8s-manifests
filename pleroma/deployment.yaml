@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: pleroma
-          image: ghcr.io/4m-mazi/docker-pleroma:main@sha256:7f67b08c518b82acf80c8741d31d90ff2091eb09c6fba593307d2cb362b942f1
+          image: ghcr.io/4m-mazi/docker-pleroma:main@sha256:94029c74778493c7af3090573a871fabc51944445071ab632fbbded09bc76216
           envFrom:
             - secretRef:
                 name: postgress-db-password
