@@ -11,7 +11,7 @@ spec:
   accessModes:
     - ReadWriteOnce
   hostPath:
-    path: "./config.exs"
+    path: "/pleroma/config.exs"
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
