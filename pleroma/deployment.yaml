@@ -29,18 +29,18 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: pleroma-deployment
+  name: pleroma-db-deployment
   labels:
-    app: pleroma
+    app: pleroma-db
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: pleroma
+      app: pleroma-db
   template:
     metadata:
       labels:
-        app: pleroma
+        app: pleroma-db
     spec:
       containers:
         - name: postgres
