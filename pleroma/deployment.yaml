@@ -25,6 +25,24 @@ spec:
               value: "pleroma"
             - name: POSTGRES_DB
               value: "pleroma"
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pleroma-deployment
+  labels:
+    app: pleroma
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pleroma
+  template:
+    metadata:
+      labels:
+        app: pleroma
+    spec:
+      containers:
         - name: postgres
           image: postgres:12.1-alpine
           env:
