@@ -28,6 +28,14 @@ spec:
       labels:
         app: pleroma
     spec:
+      initContainers:
+        - name: set-config-permissions
+          image: ghcr.io/4m-mazi/docker-pleroma:main@sha256:e8f65dc239daddcbd56bd1516019b07786b8a40a1f67577f65d75b2b2d1ee6ef
+          command: ["/bin/sh"]
+          args: ["-c", "chmod o= /etc/pleroma/config.exs"]
+          volumeMounts:
+            - name: config-volume
+              mountPath: /etc/pleroma/config.exs
       containers:
         - name: pleroma
           image: ghcr.io/4m-mazi/docker-pleroma:main@sha256:e8f65dc239daddcbd56bd1516019b07786b8a40a1f67577f65d75b2b2d1ee6ef
@@ -57,6 +65,10 @@ spec:
               value: "1000"
             - name: PLEROMA_VER
               value: "v2.4.2"
+      volumes:
+        - name: config-volume
+          persistentVolumeClaim:
+            claimName: config-pvc
 ---
 apiVersion: apps/v1
 kind: Deployment
