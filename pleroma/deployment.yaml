@@ -52,11 +52,11 @@ spec:
                   name: db-password
                   key: DB_PASS
             - name: UID
-              value: "911"
+              value: "1000"
             - name: GID
-              value: "911"
+              value: "1000"
             - name: PLEROMA_VER
-              value: "develop"
+              value: "v2.4.2"
 ---
 apiVersion: apps/v1
 kind: Deployment
