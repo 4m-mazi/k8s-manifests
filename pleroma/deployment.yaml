@@ -30,9 +30,10 @@ spec:
               value: "pleroma"
             - name: DB_NAME
               value: "pleroma"
-          envFrom:
-            - secretRef:
-                name: db-password
+            - name: DB_PASSWORD
+              valueFrom:
+                - secretRef:
+                    name: db-password
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -53,11 +54,12 @@ spec:
       containers:
         - name: postgres
           image: postgres:12.1-alpine
-          envFrom:
-            - secretRef:
-                name: postgress-db-password
           env:
             - name: POSTGRES_USER
               value: "pleroma"
             - name: POSTGRES_DB
               value: "pleroma"
+            - name: POSTGRES_PASSWORD
+              valueFrom:
+                - secretRef:
+                  name: postgress-db-password
