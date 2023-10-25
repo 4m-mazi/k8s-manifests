@@ -55,6 +55,8 @@ spec:
       containers:
         - name: postgres
           image: postgres:12.1-alpine
+          ports:
+            - containerPort: 5432
           env:
             - name: POSTGRES_USER
               value: "pleroma"
