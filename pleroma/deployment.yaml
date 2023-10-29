@@ -28,14 +28,6 @@ spec:
       labels:
         app: pleroma
     spec:
-      initContainers:
-        - name: set-config-permissions
-          image: busybox
-          command: ["chmod", "o=", "/etc/pleroma/config.exs"]
-          volumeMounts:
-            - name: volume-configmap-pleroma
-              mountPath: /etc/pleroma/config.exs
-              subPath: config.exs
       containers:
         - name: pleroma
           image: ghcr.io/4m-mazi/docker-pleroma:main@sha256:94029c74778493c7af3090573a871fabc51944445071ab632fbbded09bc76216
@@ -73,6 +65,10 @@ spec:
         - name: volume-configmap-pleroma
           configMap:
             name: configmap-pleroma
+            items:
+              - key: config.exs
+                path: config.exs
+                mode: 0640
 ---
 apiVersion: apps/v1
 kind: Deployment
