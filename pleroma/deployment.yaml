@@ -28,6 +28,8 @@ spec:
       labels:
         app: pleroma
     spec:
+      securityContext:
+      fsGroup: 1000
       containers:
         - name: pleroma
           image: ghcr.io/4m-mazi/docker-pleroma:main@sha256:94029c74778493c7af3090573a871fabc51944445071ab632fbbded09bc76216
@@ -68,7 +70,7 @@ spec:
             items:
               - key: config.exs
                 path: config.exs
-                mode: 0774
+                mode: 0770
 ---
 apiVersion: apps/v1
 kind: Deployment
