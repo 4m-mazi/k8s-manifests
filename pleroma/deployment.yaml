@@ -33,7 +33,7 @@ spec:
           image: busybox
           command: ["chmod", "o=", "/etc/pleroma/config.exs"]
           volumeMounts:
-            - name: config-volume
+            - name: volume-configmap-pleroma
               mountPath: /etc/pleroma/config.exs
               subPath: config.exs
       containers:
