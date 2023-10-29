@@ -58,13 +58,12 @@ spec:
             - name: PLEROMA_VER
               value: "v2.4.2"
           volumeMounts:
-            - name: config-volume
+            - name: volume-configmap-pleroma
               mountPath: /etc/pleroma/config.exs
-              readOnly: true
       volumes:
-        - name: config-volume
-          persistentVolumeClaim:
-            claimName: config-pvc
+        - name: volume-configmap-pleroma
+          configMap:
+            name: configmap-pleroma
 ---
 apiVersion: apps/v1
 kind: Deployment
