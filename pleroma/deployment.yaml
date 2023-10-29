@@ -68,7 +68,7 @@ spec:
             items:
               - key: config.exs
                 path: config.exs
-                mode: 0640
+                mode: 0644
 ---
 apiVersion: apps/v1
 kind: Deployment
