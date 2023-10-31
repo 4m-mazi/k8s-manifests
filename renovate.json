@@ -4,8 +4,12 @@
     "config:best-practices",
     ":disableRateLimiting",
     ":disablePrControls",
+    ":automergeAll",
+    ":automergePr",
     "helpers:pinGitHubActionDigests"
   ],
+  "automergeStrategy": "squash",
+  "assignAutomerge": true,
   "kubernetes": {
     "fileMatch": [
       "\\.yaml$"
