@@ -5,9 +5,10 @@
     ":disableRateLimiting",
     ":disablePrControls",
     ":automergeAll",
-    ":automergePr",
+    ":automergeBranch",
     "helpers:pinGitHubActionDigests"
   ],
+  "ignoreTests": true,
   "automergeStrategy": "squash",
   "assignAutomerge": true,
   "kubernetes": {
