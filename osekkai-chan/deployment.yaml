@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: osekkai-chan-deployment
+  labels:
+    app: osekkai-chan
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: osekkai-chan
+  template:
+    metadata:
+      labels:
+        app: osekkai-chan
+    spec:
+      containers:
+        - name: osekkai-chan
+          image: ghcr.io/4m-mazi/osekkai-chan:0.1.1@sha256:b89aa249fabfe477d94f946f791a374fdad9723c85d45abd4161ab64e9d382a2
+          env:
+            - name: ROLE_ID
+              value: "1167009278368940032"
+            - name: VOICE_CHANNEL_ID
+              value: "1185980820813529228"
+            - name: TEXT_CHANNEL_ID
+              value: "1167011473327915078"
+          envFrom:
+            - secretRef:
+                name: discord-bot-token
