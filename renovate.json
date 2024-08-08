@@ -4,8 +4,6 @@
     "config:best-practices",
     ":disableRateLimiting",
     ":disablePrControls",
-    ":automergeAll",
-    ":automergeBranch",
     "helpers:pinGitHubActionDigests"
   ],
   "ignoreTests": true,
@@ -40,6 +38,14 @@
       "semanticCommitType": "manifest",
       "semanticCommitScope": null
     },
-    { "matchFileNames": ["k3s-upgrade/plans.yaml"], "pinDigests": false }
+    { "matchFileNames": ["k3s-upgrade/plans.yaml"], "pinDigests": false },
+    {
+      "matchPackageNames": [
+        "ghcr.io/4m-mazi/fixup-twitter-link",
+        "ghcr.io/4m-mazi/osekkai-chan"
+      ],
+      "automerge": true,
+      "automergeType": "branch"
+    }
   ]
 }
