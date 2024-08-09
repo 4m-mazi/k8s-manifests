@@ -34,7 +34,7 @@
   },
   "packageRules": [
     {
-      "matchManagers": ["kubernetes"],
+      "matchFileNames": ["\\.yaml$"],
       "semanticCommitType": "manifest",
       "semanticCommitScope": null
     },
