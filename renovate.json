@@ -34,7 +34,7 @@
   },
   "packageRules": [
     {
-      "matchFileNames": ["\\.yaml$"],
+      "matchFileNames": ["**/*.yaml"],
       "semanticCommitType": "manifest",
       "semanticCommitScope": null
     },
