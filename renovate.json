@@ -36,7 +36,8 @@
     {
       "matchFileNames": ["**/*.yaml"],
       "semanticCommitType": "manifest",
-      "semanticCommitScope": null
+      "semanticCommitScope": null,
+      "commitMessageTopic": "{{depName}}"
     },
     { "matchFileNames": ["k3s-upgrade/plans.yaml"], "pinDigests": false },
     {
