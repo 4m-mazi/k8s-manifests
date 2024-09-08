@@ -22,3 +22,16 @@ spec:
                 name: discord-bot-token
             - secretRef:
                 name: sentry-token
+          securityContext:
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop:
+                - ALL
+            runAsNonRoot: true
+            runAsUser: 65532
+            seccompProfile:
+              type: RuntimeDefault
+          resources:
+            requests:
+              memory: "130Mi"
+              cpu: "15m"
