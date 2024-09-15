@@ -26,4 +26,4 @@ spec:
               value: "1167011473327915078"
           envFrom:
             - secretRef:
-                name: discord-bot-token
+                name: osekkai-chan-secret
