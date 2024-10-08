@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: osekkai-chan
-          image: ghcr.io/4m-mazi/osekkai-chan:0.1.13@sha256:34f1ef33cc1d81578fa84bea11d9fce56d705b3f1554d8ea53372e441eee88b2
+          image: ghcr.io/4m-mazi/osekkai-chan:0.1.14@sha256:9197c9d12b63bf198b9cbe28ef7ecda9968d48168b26712c1a8af9a5077394bf
           env:
             - name: ROLE_ID
               value: "1167009278368940032"
