@@ -19,9 +19,7 @@ spec:
           image: ghcr.io/4m-mazi/fixup-twitter-link:main@sha256:020d5103ee226adbfbe0b617ea4012fe52cec9e34da2eb895edf07274457dc6e
           envFrom:
             - secretRef:
-                name: discord-bot-token
-            - secretRef:
-                name: sentry-token
+                name: fixup-twitter-link-secret
           securityContext:
             allowPrivilegeEscalation: false
             capabilities:
