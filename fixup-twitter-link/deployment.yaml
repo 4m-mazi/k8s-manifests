@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: fixup-twitter-link
-          image: ghcr.io/4m-mazi/fixup-twitter-link:main@sha256:cf39f44ec7f98b71c949ba38f9c789c7787f241fb657f22451b69a08547d67fe
+          image: ghcr.io/4m-mazi/fixup-twitter-link:main@sha256:d45b23bc48694bc15f5a6416b8248abb66e08368244e21adb52bd0a36f31b3c3
           envFrom:
             - secretRef:
                 name: fixup-twitter-link-secret
