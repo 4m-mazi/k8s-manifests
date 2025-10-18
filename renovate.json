@@ -10,15 +10,19 @@
   "automergeStrategy": "squash",
   "assignAutomerge": true,
   "kubernetes": {
-    "fileMatch": [
-      "\\.yaml$"
+    "managerFilePatterns": [
+      "/\\.yaml$/"
     ]
   },
   "customManagers": [
     {
       "customType": "regex",
-      "fileMatch": ["k3s-upgrade/plans.yaml"],
-      "matchStrings": ["version\\s*:\\s*[\"']?(?<currentValue>.+?)[\"']?\\s"],
+      "managerFilePatterns": [
+        "/k3s-upgrade/plans.yaml/"
+      ],
+      "matchStrings": [
+        "version\\s*:\\s*[\"']?(?<currentValue>.+?)[\"']?\\s"
+      ],
       "depNameTemplate": "k3s",
       "versioningTemplate": "semver-coerced",
       "datasourceTemplate": "custom.k3s"
@@ -34,12 +38,19 @@
   },
   "packageRules": [
     {
-      "matchFileNames": ["**/*.yaml"],
+      "matchFileNames": [
+        "**/*.yaml"
+      ],
       "semanticCommitType": "manifest",
       "semanticCommitScope": null,
       "commitMessageTopic": "{{depName}}"
     },
-    { "matchFileNames": ["k3s-upgrade/plans.yaml"], "pinDigests": false },
+    {
+      "matchFileNames": [
+        "k3s-upgrade/plans.yaml"
+      ],
+      "pinDigests": false
+    },
     {
       "matchPackageNames": [
         "ghcr.io/4m-mazi/fixup-twitter-link",
